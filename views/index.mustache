@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>HI animals</h1>
+
+    <h4>checking checking</h4>
+
+    <a href="/animals/add">Add New Animal</a>
+
+
+    {{#animal}}
+    <li><a href="/animals/{{_id}}">{{name}}</a></li>
+    {{/animal}}
+
+  </body>
+</html>
