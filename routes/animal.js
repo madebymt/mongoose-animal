@@ -17,7 +17,7 @@ router.get("/animals/add", function(req, res) {
   res.render("add")
 })
 
-// form submitting router setting
+// adding form submitting router setting
 router.post("/animals", function(req, res) {
   const name = req.body.name
   const breed = req.body.breed
@@ -43,7 +43,7 @@ router.post("/animals", function(req, res) {
 
 // each sigle item unique page, so can edit or delete later on
 router.post("/animals/:id", function(req, res) {
-  City.findOne({ _id: req.params.id }).then(function(animal) {
+  Model.findOne({ _id: req.params.id }).then(function(animals) {
       const name = req.body.name
       const breed = req.body.breed
       const food = req.body.food
@@ -64,8 +64,11 @@ router.post("/animals/:id", function(req, res) {
   })
 })
 
+
+//// i just edit here /////
 router.get("/animals/:id", function(req, res) {
-  Model.findOne({ _id: req.params.id }).then(function(animals) {
+  Model.findOne({ _id: req.params.id })
+  .then(function(animals) {
     res.render("detail", {
      animals: animals
     })
@@ -73,7 +76,8 @@ router.get("/animals/:id", function(req, res) {
 })
 
 router.get("/animals/:id/edit", function(req, res) {
-  Model.findOne({ _id: req.params.id }).then(function(animals) {
+  Model.findOne({ _id: req.params.id })
+  .then(function(animals) {
     res.render("edit", {
       animals: animals
     })
