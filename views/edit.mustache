@@ -8,7 +8,7 @@
 
     <h1>EDIT animal</h1>
 
-    <form class="" action="/animals/{{animals._id}}" method="post">
+    <form class="" action="/animals/:id" method="post">
       <div class="">
         <label for="name">Name</label>
         <input type="text" name="name" value="{{animals.name}}">{{#errors.name}}Name is required{{/errors.name}}
@@ -16,13 +16,13 @@
 
       <div class="">
         <label for="breed">breed</label>
-        <input type="text" name="state" value="{{animals.breed}}">{{#errors.state}}State is required{{/errors.state}}
+        <input type="text" name="breed" value="{{animals.breed}}">{{#errors.breed}}Breed is required{{/errors.breed}}
       </div>
 
 
       <div class="">
         <label for="food">food they like</label>
-        <input type="text" name="food" value="{{animals.food}}">{{#errors.state}}State is required{{/errors.state}}
+        <input type="text" name="food" value="{{animals.food}}">{{#errors.food}}food is required{{/errors.food}}
       </div>
 
       <button type="submit" name="button">Update Animal</button>
