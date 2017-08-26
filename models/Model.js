@@ -4,9 +4,10 @@ const mongoose = require("mongoose")
 // defind the shema for our form submit
 const pet = new mongoose.Schema(
 {
-  name: { type: String, required: true, unique: true },
+  id : { type: String },
+  name: { type: String, required: true },
   food: { type: String },
-  breed :{ type: String, required: true},
+  breed :{ type: String },
   home: {
       zipcode:{ type: Number },
       Address: { type: String },
